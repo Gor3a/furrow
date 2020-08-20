@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
-
+// if (typeof window == 'undefined'){
+//   const window = {}
+// }
 export default function useWindowSize() {
   function getSize() {
     return {

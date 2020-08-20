@@ -39,8 +39,11 @@ body {
 `
 
 const Layout = ({ children }) => {
+  // console.log(useGlobalStateContext())
   const dispatch = useGlobalDispatchContext()
-  const { cursorStyles, currentTheme } = useGlobalStateContext()
+  const { currentTheme } = useGlobalStateContext()
+  const cursorStyles =  ["pointer", "hovered", "locked", "white"]
+  // console.log(cursorStyles)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

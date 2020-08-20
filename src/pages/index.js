@@ -1,16 +1,21 @@
 import React from "react"
 import Layout from "../components/layout"
+import loadable from '@loadable/component'
 
 //Components
 import HomeContent from "../components/homePage/HomeContent"
 import HomeFeatured from "../components/homePage/HomeFeatured"
 import HomeAbout from "../components/homePage/HomeAbout"
-import HomeBanner from "../components/homePage/HomeBanner"
+
+
+
 //Context
 import {
   useGlobalStateContext,
   useGlobalDispatchContext,
 } from "../context/globalContext"
+
+const HomeBanner = loadable(() => import("../components/homePage/HomeBanner"))
 
 const IndexPage = props => {
   const dispatch = useGlobalDispatchContext()
@@ -22,6 +27,7 @@ const IndexPage = props => {
   return (
     <Layout>
       {console.log("props", props)}
+      {/* <HomeBanner onCursor={onCursor} /> */}
       <HomeBanner onCursor={onCursor} />
       <HomeContent />
       <HomeFeatured onCursor={onCursor} />
